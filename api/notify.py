@@ -75,6 +75,7 @@ class handler(BaseHTTPRequestHandler):
             {
                 "message": "Apprise Vercel Notify is running",
                 "usage": "Send POST request with JSON {urls, body, title?, type?, format?, icon?}",
+                "apprise_version": apprise.__version__,
             },
         )
 
