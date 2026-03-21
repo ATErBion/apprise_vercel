@@ -4,3 +4,21 @@ updates:
     directory: "/api"
     schedule:
       interval: "daily" # 每天检查一次更新，也可以改为 "weekly" (每周)
+      time: "00:00"
+      timezone: "Asia/Shanghai"
+
+    # 分组策略：低风险 patch/minor 合一个 PR，major 单独一个 PR
+    groups:
+      python-safe-updates:
+        # 低风险：patch 和 minor 版本更新合并为一个 PR
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      python-major-updates:
+        # 高风险：major 版本更新单独 PR，需人工审查
+        patterns:
+          - "*"
+        update-types:
+          - "major"
