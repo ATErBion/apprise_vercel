@@ -617,9 +617,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const versionEl = document.getElementById("appriseVersion");
             if (versionEl) {
                 if (data && data.apprise_version) {
-                    versionEl.textContent = "Apprise v" + data.apprise_version;
+                    versionEl.textContent = data.apprise_version;
                 } else {
-                    versionEl.textContent = "Apprise vunknown";
+                    versionEl.textContent = "unknown";
                 }
             }
         })
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Failed to fetch Apprise version:", err);
             const versionEl = document.getElementById("appriseVersion");
             if (versionEl) {
-                versionEl.textContent = "Apprise vunknown";
+                versionEl.textContent = "unknown";
             }
         });
 });
